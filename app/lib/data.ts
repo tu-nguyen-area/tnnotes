@@ -1,3 +1,5 @@
+'use server';
+
 import postgres from 'postgres';
 import { Note } from '@/app/lib/definitions';
 

@@ -1,9 +1,40 @@
 'use server';
 
 import postgres from 'postgres';
-import { Note } from '@/app/lib/definitions';
+import { genSaltSync, hashSync } from 'bcrypt-ts';
+import { User, Note } from '@/app/lib/definitions';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
+
+export async function getUser(email: string) {
+  try {
+    const data = await sql<User[]>`
+      SELECT * FROM "User"
+      WHERE "email" = ${`${email}`};
+    `;
+
+    return data;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch user data.');
+  }
+}
+
+export async function createUser(email: string, password: string) {
+  const salt = genSaltSync(10);
+  const hash = hashSync(password, salt);
+  const name = email;
+
+  try {
+    await sql`
+      INSERT INTO "User" (name, email, password)
+      VALUES(${name}, ${email}, ${hash});
+    `;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to create user.');
+  }
+}
 
 export async function fetchNote(id: string) {
   try {

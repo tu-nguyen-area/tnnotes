@@ -1,0 +1,20 @@
+.slideFlex {
+    display: flex;
+  }
+  
+  @keyframes slip {
+    0% { transform: translateX(-5%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .slideSlip {
+    animation-name: slip;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .slideSlipSlow {
+    animation: slip 20s linear infinite;
+  }
+  

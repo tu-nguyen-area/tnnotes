@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TNOS",
-  description: "TNOS Project",
+  title: "TN Notes",
+  description: "TN Notes",
 };
 
 export default function RootLayout({

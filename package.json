@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-tnos",
+  "name": "nextjs-notes",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,21 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.30.0",
-    "@tailwindcss/postcss": "^4.0.14",
+    "@tailwindcss/postcss": "^4.0.9",
+    "bcrypt-ts": "^6.0.0",
     "next": "^15.2.3",
+    "next-auth": "^5.0.0-beta.25",
+    "postgres": "^3.4.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.0",
-    "@types/node": "^22.13.10",
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9.22.0",
+    "eslint": "^9",
     "eslint-config-next": "^15.2.3",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.14",
-    "typescript": "^5.8.2"
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5"
   }
 }

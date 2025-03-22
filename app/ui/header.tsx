@@ -6,9 +6,9 @@ export default function Header() {
   <>
 
   <header>
-    <section className="flex flex-row justify-between p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+    <section className="flex justify-between bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-1">
       <Link href="/">
-        TNOS
+        TN NOTES
       </Link>
       <p>tu-nguyen@tu-nguyen.com</p>
     </section>

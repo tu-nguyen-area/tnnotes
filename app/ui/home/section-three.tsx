@@ -1,14 +1,14 @@
-import Slide from '@/app/ui/slide';
+import EditForm from '@/components/custom/edit-form';
+import { fetchEachNote } from '@/app/lib/data';
 
-export default function SectionThree() {
+export default async function SectionThree({ id }: { id: string }) {
+  const [ note ] = await fetchEachNote(id);
+
   return (
   <>
 
-  <section className="my-16 text-black">
-    <p className="text-xl font-bold">Workstations and desktops</p>
-    <p>Optimised AI/ML and cloud devops.</p>
-    <p>The professional developer&#39;s preference.</p>
-    <Slide />
+  <section>
+    <EditForm note={note} />
   </section>
 
   </>

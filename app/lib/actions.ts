@@ -43,7 +43,8 @@ export async function createNote(prevState: State, formData: FormData) {
   }
 
   const { title, author_id, content } = validatedFields.data;
-  const date = new Date().toISOString().split('T')[0];
+  //const date = new Date().toISOString().split('T')[0];
+  const date = new Date();
 
   try {
     //console.log('Creating note data...');

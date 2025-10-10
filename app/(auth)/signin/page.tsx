@@ -33,9 +33,18 @@ export default function Page() {
   <>
 
   <section>
-    <AuthForm action={handleSubmit} defaultEmail={email} isSuccessful={isSuccessful} url="/signup" content="Don&#39;t have an account? Sign up for free.">
+    <AuthForm action={handleSubmit}
+      defaultEmail={email} isSuccessful={isSuccessful}
+      url="/signup"
+      content="Don&#39;t have an account? Sign up for free."
+    >
       <div className="flex justify-center">
-        <h1 className="md:p-6 text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent w-fit">Sign In</h1>
+        <h1 className="md:p-6 text-center text-3xl md:text-5xl
+          font-bold bg-gradient-to-r from-indigo-500 to-pink-500
+          bg-clip-text text-transparent w-fit"
+        >
+          Sign In
+        </h1>
       </div>
     </AuthForm>
   </section>

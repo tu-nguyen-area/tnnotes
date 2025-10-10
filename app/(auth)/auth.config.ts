@@ -20,10 +20,12 @@ export const authConfig = {
       if(isOnSignUp || isOnSignIn) {
         return true;
       }
+
       if(isOnHome) {
         if(isSignedIn) return true;
           return false;
       }
+
       if(isSignedIn) {
         return Response.redirect(new URL('/home', nextUrl as unknown as URL));
       }

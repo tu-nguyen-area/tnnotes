@@ -20,7 +20,13 @@ export function DeleteNote({ id }: { id: string }) {
   <>
 
   <form action={deleteNoteId}>
-    <button type="submit" className="bg-black dark:bg-white rounded-lg text-white dark:text-black p-2 w-full md:w-36 h-10 hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 hover:text-white">Delete</button>
+    <button type="submit" className="bg-black dark:bg-white rounded-lg
+      text-white dark:text-black p-2 w-full md:w-36 h-10
+      hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500
+      hover:to-pink-500 hover:text-white"
+    >
+      Delete
+    </button>
   </form>
 
   </>

@@ -3,7 +3,7 @@ export default function Loading() {
   <>
 
   <section>
-    Loading
+    Loading...
   </section>
 
   </>

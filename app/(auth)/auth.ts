@@ -32,7 +32,7 @@ export const {
           if(!passwordsMatch) return null;
           return users[0];
         }
-        
+
         return null;
       },
     }),
@@ -42,7 +42,7 @@ export const {
       if (user) {
         token.id = user.id;
       }
-  
+
       return token;
     },
     async session({
@@ -55,7 +55,6 @@ export const {
       if (session.user) {
         session.user.id = token.id as string;
       }
-
       return session;
     },
   },

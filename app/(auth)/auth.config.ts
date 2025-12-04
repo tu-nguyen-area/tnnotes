@@ -12,6 +12,7 @@ export const authConfig = {
       const isOnHome = nextUrl.pathname.startsWith("/home");
       const isOnSignUp = nextUrl.pathname.startsWith("/signup");
       const isOnSignIn = nextUrl.pathname.startsWith("/signin");
+      const isOnAbout = nextUrl.pathname.startsWith("/about");
 
       if(isSignedIn && (isOnSignIn || isOnSignUp)) {
         return Response.redirect(new URL('/home', nextUrl as unknown as URL));
@@ -24,6 +25,11 @@ export const authConfig = {
       if(isOnHome) {
         if(isSignedIn) return true;
           return false;
+      }
+
+      if(isOnAbout) {
+        if(isSignedIn) return true;
+          return true;
       }
 
       if(isSignedIn) {

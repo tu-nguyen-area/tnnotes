@@ -1,6 +1,6 @@
 'use client';
 
-import { AuthForm } from '@/components/custom/auth-form';
+import { AuthForm } from '@/app/components/auth-form';
 import { useRouter } from 'next/navigation';
 import { useActionState, useEffect, useState } from 'react';
 import { signup, type SignupActionState } from '@/app/(auth)/actions';
@@ -35,10 +35,18 @@ export default function Page() {
   return (
   <>
 
-  <section>
-    <AuthForm action={handleSubmit} defaultEmail={email} isSuccessful={isSuccessful} url="/signin" content="Already have an account? Sign in instead.">
+  <section className="h-dvh bg-neutral-100 md:bg-white dark:md:bg-neutral-950">
+    <AuthForm action={handleSubmit} defaultEmail={email}
+      isSuccessful={isSuccessful} url="/signin"
+      content="Already have an account? Sign in instead."
+    >
       <div className="flex justify-center">
-        <h1 className="md:p-6 text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent w-fit">Sign Up</h1>
+        <h1 className="md:py-1 text-center text-3xl md:text-5xl
+          font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-rose-500
+          bg-clip-text text-transparent w-fit"
+        >
+          Sign Up
+        </h1>
       </div>
     </AuthForm>
   </section>

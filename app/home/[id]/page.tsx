@@ -10,16 +10,14 @@ export default async function Page(
 
   return (
   <>
-
   <main>
     <SectionTwo id={id}/>
 
     <div className="grid gap-6 md:flex md:justify-between m-6 md:m-8">
       <Link href="/home">
-        <button className="bg-black dark:bg-white rounded-lg text-white
-          dark:text-black p-2 w-full md:w-36 h-10 hover:bg-gradient-to-r
-          hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500
-          hover:text-white"
+        <button className="bg-black dark:bg-white rounded-lg text-white w-full
+          dark:text-black md:w-36 h-10 hover:bg-gradient-to-r hover:text-white
+          hover:from-blue-500 hover:via-purple-500 hover:to-rose-500 p-2"
         >
           Back
         </button>

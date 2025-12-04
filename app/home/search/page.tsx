@@ -1,4 +1,4 @@
-import CreateForm from '@/app/components/create-form';
+import Search from '@/app/components/search';
 import { auth } from '@/app/(auth)/auth';
 
 export default async function Page() {
@@ -8,11 +8,9 @@ export default async function Page() {
   return (
   <>
 
-  <section>
-    <CreateForm
-      author_id={`${user_id}`}
-    />
-  </section>
+  <main>
+    <Search user_id={`${user_id}`} />
+  </main>
 
   </>
   );

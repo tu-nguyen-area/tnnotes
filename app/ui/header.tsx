@@ -1,19 +1,30 @@
 import Link from 'next/link';
-import BarNav from '@/app/ui/bar-nav';
 
 export default function Header() {
   return (
   <>
 
   <header>
-    <section className="flex justify-between bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-1">
+    <section className="w-full z-10 flex justify-between p-1 bg-gradient-to-r
+      from-blue-500 via-purple-500 to-rose-500 text-white text-sm md:text-base"
+    >
       <Link href="/">
         TN NOTES
       </Link>
-      <p>tu-nguyen@tu-nguyen.com</p>
+      <Link href="/home" className="hidden md:inline">
+        Home
+      </Link>
+      <Link href="/home/create" className="hidden md:inline">
+        New Note
+      </Link>
+      <Link href="/home/search" className="hidden md:inline">
+        Search
+      </Link>
+      <Link href="/about" className="hidden md:inline">
+        About
+      </Link>
+      <p>tu-nguyen@tn-technology.com</p>
     </section>
-
-    <BarNav />
   </header>
 
   </>

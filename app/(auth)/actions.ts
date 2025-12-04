@@ -40,8 +40,14 @@ export const signin = async (
 };
 
 export interface SignupActionState {
-  status: 'idle' | 'in_progress' | 'success' | 'failed' | 'user_exists' | 'invalid_data';
-}
+  status:
+    | "idle"
+    | "in_progress"
+    | "success"
+    | "failed"
+    | "user_exists"
+    | "invalid_data";
+};
 
 export const signup = async (
   _: SignupActionState,

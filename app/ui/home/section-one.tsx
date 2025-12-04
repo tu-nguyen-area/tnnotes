@@ -1,20 +1,22 @@
-import { Note } from '@/components/custom/note';
+import { Note } from '@/app/components/note';
 import { fetchNote } from '@/app/lib/data';
 import { auth } from '@/app/(auth)/auth';
+import Search from '@/app/components/search';
 
 export default async function SectionOne() {
   const session = await auth();
-  const user_id = session?.user?.id || "dd39e1da-d0d5-4797-ae22-f2f2d6010b6d";
-  const listNote = await fetchNote(user_id);
+  const user_id = session?.user?.id
+  const list_notes = await fetchNote(`${user_id}`);
 
   return (
   <>
 
   <section>
-    {listNote.map((note) => {
+    <Search user_id={`${user_id}`} />
+    {list_notes.map((note) => {
       return(
         <Note key={note.note_id}
-          noteLink={`/home/${note.note_id}`}
+          noteLink={note.note_id}
           noteTitle={note.title}
           noteContent={note.content}
         />

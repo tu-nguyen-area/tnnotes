@@ -6,9 +6,9 @@ import Link from 'next/link';
 const links = [
   { name: 'Home', href: '/home', },
   { name: 'New Note', href: '/home/create', },
+  { name: 'Search', href: '/home/search', },
   { name: 'Support', href: '/', },
-  { name: 'Public', href: '/', },
-  { name: 'About', href: '/', },
+  { name: 'About', href: '/about', },
 ];
 
 export default function BarNav() {
@@ -22,26 +22,42 @@ export default function BarNav() {
   <>
 
   <nav>
-    <button onClick={toggleBarNav} className="fixed right-0 top-6 z-30 m-3 text-xl bg-white dark:bg-black p-1 rounded opacity-50 text-black dark:text-white p-2">
+    <button onClick={toggleBarNav} className="fixed right-0 top-6 z-40 m-3
+      text-xl bg-white dark:bg-black rounded opacity-50 text-black
+      dark:text-white p-2"
+    >
       {isOpen ? '✖' : '☰'}
     </button>
 
     {isOpen && (
     <div>
-      <div className="fixed flex flex-row justify-between top-0 p-1 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+      <div className="fixed flex flex-row justify-between top-0 z-20 p-1
+        w-full bg-gradient-to-r from-blue-500 via-purple-500 to-rose-500
+        text-white text-sm md:text-base"
+      >
         <Link href="/">
           TN NOTES
         </Link>
-        <p>tu-nguyen@tu-nguyen.org</p>
+        <p>tu-nguyen@tn-technology.com</p>
       </div>
-      <div className="grid md:flex justify-center fixed top-8 z-20 bg-white dark:bg-black w-full h-full md:h-20 overflow-auto">
-      {links.map((link) => {
-        return (
-          <Link key={link.name} onClick={toggleBarNav} href={link.href} className="bg-black text-white dark:bg-white dark:text-black text-center hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 rounded-lg m-3 p-3 w-28 h-12">
-            {link.name}
-          </Link>
-        );
-      })}
+      <div className="grid md:flex justify-center fixed top-7 md:top-8 z-30
+        bg-white dark:bg-black w-full h-full md:h-18 overflow-auto"
+      >
+        {links.map((link) => {
+          return (
+            <Link
+              key={link.name}
+              className="bg-black text-white dark:bg-white dark:text-black
+                text-center rounded-lg m-3 p-2 w-32 h-10 hover:bg-gradient-to-r
+                hover:from-blue-500 hover:via-purple-500 hover:to-rose-500
+                hover:text-white"
+              href={link.href}
+              onClick={toggleBarNav}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
       </div>
     </div>
     )}

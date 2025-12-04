@@ -2,15 +2,12 @@ import Header from '@/app/ui/header';
 import BarNav from '@/app/ui/bar-nav';
 import SideNav from '@/app/ui/side-nav';
 import Footer from '@/app/ui/footer';
-import SignoutForm from '@/app/components/signout-form';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
   <>
-
   <div>
     <Header />
-    <SignoutForm />
     <BarNav />
     <div>
       <div>

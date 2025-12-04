@@ -110,21 +110,24 @@ export async function deleteNote(note_id: string) {
 export async function searchNote(id: string, search: string) {
   const lower = search.toLowerCase();
   const upper = search.toUpperCase();
-  const first = search.charAt(0).toUpperCase().concat(lower.substr(1));
 
   try {
     const data = await sql`
       SELECT * FROM "Note"
       WHERE "author_id" = ${`${id}`}
-      AND "title" LIKE ${`%${search}%`}
-      OR "content" LIKE ${`%${search}%`}
-      OR "title" LIKE ${`%${first}%`}
-      OR "content" LIKE ${`%${first}%`}
+      AND "title" LIKE ${`%${lower}`}
+      OR "title" LIKE ${`${lower}%`}
       OR "title" LIKE ${`%${lower}%`}
+      OR "content" LIKE ${`%${lower}`}
+      OR "content" LIKE ${`${lower}%`}
       OR "content" LIKE ${`%${lower}%`}
+      OR "title" LIKE ${`%${upper}`}
+      OR "title" LIKE ${`${upper}%`}
       OR "title" LIKE ${`%${upper}%`}
+      OR "content" LIKE ${`%${upper}`}
+      OR "content" LIKE ${`${upper}%`}
       OR "content" LIKE ${`%${upper}%`}
-      ORDER BY "title";
+      ORDER BY "title" DESC;
     `;
 
     return data;

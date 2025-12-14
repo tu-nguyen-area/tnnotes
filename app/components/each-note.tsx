@@ -14,9 +14,8 @@ export function EachNote({
     rounded-lg break-words`}
   >
     <div className={`${styles.noteLayout}`}>
-      <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r
-        from-blue-500 via-purple-500 to-rose-500 bg-clip-text text-transparent
-        w-fit"
+      <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r w-fit
+        from-blue-500 via-purple-500 to-rose-500 bg-clip-text text-transparent"
       >
         {noteTitle}
       </h1>

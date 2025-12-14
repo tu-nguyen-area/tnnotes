@@ -116,14 +116,14 @@ export async function searchNote(id: string, search: string) {
     const data = await sql`
       SELECT * FROM "Note"
       WHERE "author_id" = ${`${id}`}
-      AND "title" LIKE ${`%${search}%`}
-      OR "content" LIKE ${`%${search}%`}
-      OR "title" LIKE ${`%${first}%`}
-      OR "content" LIKE ${`%${first}%`}
-      OR "title" LIKE ${`%${lower}%`}
-      OR "content" LIKE ${`%${lower}%`}
-      OR "title" LIKE ${`%${upper}%`}
-      OR "content" LIKE ${`%${upper}%`}
+      AND "title" ILIKE ${`%${search}%`}
+      OR "content" ILIKE ${`%${search}%`}
+      OR "title" ILIKE ${`%${first}%`}
+      OR "content" ILIKE ${`%${first}%`}
+      OR "title" ILIKE ${`%${lower}%`}
+      OR "content" ILIKE ${`%${lower}%`}
+      OR "title" ILIKE ${`%${upper}%`}
+      OR "content" ILIKE ${`%${upper}%`}
       ORDER BY "title";
     `;
 

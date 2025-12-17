@@ -19,7 +19,8 @@ export function EachNote({
       >
         {noteTitle}
       </h1>
-      <p className="whitespace-pre-line md:whitespace-pre-wrap"
+      <p className="whitespace-pre-line md:whitespace-pre-wrap overflow-y-auto
+        max-h-128"
       >
         {noteContent}
       </p>

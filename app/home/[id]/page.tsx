@@ -10,6 +10,7 @@ export default async function Page(
 
   return (
   <>
+
   <main>
     <SectionTwo id={id}/>
 
